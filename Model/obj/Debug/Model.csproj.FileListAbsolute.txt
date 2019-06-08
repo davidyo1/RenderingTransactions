@@ -1,0 +1,5 @@
+D:\david_yo\Documents\Visual Studio 2017\Projects\RenderingTransactions\Model\bin\Debug\Model.dll
+D:\david_yo\Documents\Visual Studio 2017\Projects\RenderingTransactions\Model\bin\Debug\Model.pdb
+D:\david_yo\Documents\Visual Studio 2017\Projects\RenderingTransactions\Model\obj\Debug\Model.dll
+D:\david_yo\Documents\Visual Studio 2017\Projects\RenderingTransactions\Model\obj\Debug\Model.pdb
+d:\david_yo\documents\visual studio 2017\Projects\RenderingTransactions\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

@@ -1,0 +1,9 @@
+D:\david_yo\Documents\Visual Studio 2017\Projects\RenderingTransactions\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+D:\david_yo\Documents\Visual Studio 2017\Projects\RenderingTransactions\BusinessLogic\bin\Debug\BusinessLogic.dll
+D:\david_yo\Documents\Visual Studio 2017\Projects\RenderingTransactions\BusinessLogic\bin\Debug\BusinessLogic.pdb
+D:\david_yo\Documents\Visual Studio 2017\Projects\RenderingTransactions\BusinessLogic\bin\Debug\Model.dll
+D:\david_yo\Documents\Visual Studio 2017\Projects\RenderingTransactions\BusinessLogic\bin\Debug\Model.pdb
+D:\david_yo\Documents\Visual Studio 2017\Projects\RenderingTransactions\BusinessLogic\obj\Debug\BusinessLogic.dll
+D:\david_yo\Documents\Visual Studio 2017\Projects\RenderingTransactions\BusinessLogic\obj\Debug\BusinessLogic.pdb
+D:\david_yo\Documents\Visual Studio 2017\Projects\RenderingTransactions\BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+D:\david_yo\Documents\Visual Studio 2017\Projects\RenderingTransactions\BusinessLogic\bin\Debug\Newtonsoft.Json.xml

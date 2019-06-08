@@ -1,0 +1,121 @@
+﻿@model IEnumerable<Model.Transactions>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<form action="filterTransactions">
+    <div class="col-md-offset-7 col-md-5 col-sm-6" id="searchFilter">
+        <select name="transactionType" id="transactionType">
+            <option value="">Transaction type</option>
+            <option value="@BusinessLogic.Variables.ActionValues.payment.GetHashCode()">@BusinessLogic.Variables.ActionValues.payment</option>
+            <option value="@BusinessLogic.Variables.ActionValues.credit.GetHashCode()">@BusinessLogic.Variables.ActionValues.credit</option>
+        </select>
+        <select name="currency" id="currency">
+            <option value="">Currency</option>
+            <option value="@BusinessLogic.Variables.CurrencyCodeValues.EUR.GetHashCode()">@BusinessLogic.Variables.CurrencyCodeValues.EUR</option>
+            <option value="@BusinessLogic.Variables.CurrencyCodeValues.JPY.GetHashCode()">@BusinessLogic.Variables.CurrencyCodeValues.JPY</option>
+            <option value="@BusinessLogic.Variables.CurrencyCodeValues.USD.GetHashCode()">@BusinessLogic.Variables.CurrencyCodeValues.USD</option>
+        </select>
+        <input type="submit" name="search" value="Search" />
+    </div>
+</form>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.card.holderName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.brandId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.card.lastFourDigits)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.action)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.currencyCode)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="data" onclick="toggleHiddenData('@Html.DisplayFor(modelItem => item.id)');">
+            <td>
+                @Html.DisplayFor(modelItem => item.card.holderName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.brandId)
+            </td>
+            <td>
+                XXXX @Html.DisplayFor(modelItem => item.card.lastFourDigits)
+            </td>
+            <td>
+                @System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Html.DisplayFor(modelItem => item.action).ToString())
+            </td>
+            <td>
+                @((Convert.ToDouble(Html.DisplayFor(modelItem => item.amount).ToString())).ToString("#.00"))
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.currencyCode)
+            </td>
+        </tr>
+        <tr class="hidden-data" id="@Html.DisplayFor(modelItem => item.id)">
+            <td colspan="6">
+                <div class="col-sm-6">
+                    <div class="title-column col-sm-4">
+                        @Html.DisplayNameFor(model => model.id)
+                    </div>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(modelItem => item.id)
+                    </div>
+                    <div class="title-column col-sm-4">
+                        @Html.DisplayNameFor(model => model.trackingCode)
+                    </div>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(modelItem => item.trackingCode)
+                    </div>
+                    <div class="title-column col-sm-4">
+                        @Html.DisplayNameFor(model => model.brandId)
+                    </div>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(modelItem => item.brandId)
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="title-column col-sm-4">
+                        @Html.DisplayNameFor(model => model.card.firstSixDigits)
+                    </div>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(modelItem => item.card.firstSixDigits) XXXX
+                    </div>
+                    <div class="title-column col-sm-4">
+                        @Html.DisplayNameFor(model => model.card.expiryMonth)
+                    </div>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(modelItem => item.card.expiryMonth)
+                    </div>
+                    <div class="title-column col-sm-4">
+                        @Html.DisplayNameFor(model => model.card.expiryYear)
+                    </div>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(modelItem => item.card.expiryYear)
+                    </div>
+                </div>
+            </td>
+        </tr>
+    }
+
+</table>
+@section scripts{
+    <script>
+    $(document).ready(function () {
+        $("#transactionType").val(@ViewBag.SelectedAction);
+        $("#currency").val(@ViewBag.SelectedCurrency);
+    })
+    </script>
+}
